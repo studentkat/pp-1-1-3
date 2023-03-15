@@ -16,10 +16,9 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public void createUsersTable() {
 
-        Connection connection = null;
-        PreparedStatement st = null;
-        ResultSet rs = null;
-        String query = null;
+        Connection connection;
+        PreparedStatement st;
+        String query;
 
         query = "CREATE TABLE IF NOT EXISTS `mydbtest`.`users` (\n" +
                 "  `id` INT NOT NULL AUTO_INCREMENT,\n" +
@@ -44,10 +43,9 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void dropUsersTable() {
-        Connection connection = null;
-        PreparedStatement st = null;
-        ResultSet rs = null;
-        String query = null;
+        Connection connection;
+        PreparedStatement st;
+        String query;
 
         query = "DROP TABLE IF EXISTS `mydbtest`.`users`";
 
@@ -68,10 +66,9 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public void saveUser(String name, String lastName, byte age) {
 
-        Connection connection = null;
-        PreparedStatement st = null;
-        ResultSet rs = null;
-        String query = null;
+        Connection connection;
+        PreparedStatement st;
+        String query;
 
         query = "insert into `mydbtest`.`users` (name, lastName, age) values ('"+ name +"','"+ lastName + "'," + age + ")";
 
@@ -91,10 +88,9 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void removeUserById(long id) {
-        Connection connection = null;
-        PreparedStatement st = null;
-        ResultSet rs = null;
-        String query = null;
+        Connection connection;
+        PreparedStatement st;
+        String query;
 
         query = "DELETE FROM `mydbtest`.`users` where ID="+id;
 
@@ -115,10 +111,10 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public List<User> getAllUsers() {
 
-        Connection connection = null;
-        PreparedStatement st = null;
-        ResultSet rs = null;
-        String query = null;
+        Connection connection;
+        PreparedStatement st;
+        ResultSet rs;
+        String query;
 
         List<User> userList = new ArrayList<>();
 
@@ -161,10 +157,10 @@ public class UserDaoJDBCImpl implements UserDao {
     }
 
     public void cleanUsersTable() {
-        Connection connection = null;
-        PreparedStatement st = null;
-        ResultSet rs = null;
-        String query = null;
+        Connection connection;
+        PreparedStatement st;
+        ResultSet rs;
+        String query;
 
         query = "TRUNCATE TABLE `mydbtest`.`users`";
 
